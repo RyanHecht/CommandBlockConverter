@@ -22,8 +22,15 @@ public class ScriptManager {
     }
   }
 
+  public ScriptManager(String script) throws ScriptException {
+    engine = new ScriptEngineManager().getEngineByName("nashorn");
+
+    engine.eval(script, engine.getContext());
+
+  }
+
   public String convertCommand(String command) throws ScriptException {
-    command = "completeConvert(\"" + StringEscapeUtils.escapeJavaScript(command) + "\")";
+    command = "completelyConvert(\"" + StringEscapeUtils.escapeJavaScript(command) + "\")";
 
     Object returned = engine.eval(command, engine.getContext());
     if (returned instanceof String) {
