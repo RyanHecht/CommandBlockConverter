@@ -34,7 +34,7 @@ public class ChunkLoadListener implements Listener {
     Chunk chunk = event.getChunk();
 
     if(!visited(chunk)) {
-      System.out.println("new chunk!");
+      //System.out.println("new chunk!");
       convertChunk(chunk);
     }
   }
