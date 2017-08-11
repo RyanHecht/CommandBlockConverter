@@ -1,6 +1,6 @@
 var parts;
 
-function completeConvert(old) {
+function completelyConvert(old) {
 	if (old.startsWith("summon") || old.startsWith("/summon")) {
 		old = convertCommand(old);
 	}
@@ -600,7 +600,7 @@ function parseSection(depth, nbt, index){
 				input = input.replace(/\[[0-9]+\:\{/g, '[{');
 				input = input.replace(/\}\,[0-9]+\:\{/g, '},{');
 
-				input = input.replace(/\[([0-9.]+)[fd]?,([0-9.]+)[fd]?,([0-9.]+)[fd]?\]/g, '[$1,$2,$3]');
+				// input = input.replace(/\[([0-9.]+)[fd]?,([0-9.]+)[fd]?,([0-9.]+)[fd]?\]/g, '[$1,$2,$3]');
 
 				return input;
 
