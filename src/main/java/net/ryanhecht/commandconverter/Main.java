@@ -13,7 +13,6 @@ public class Main extends JavaPlugin {
   @Override
   public void onEnable() {
     instance = this;
-
     if(!getDataFolder().exists()) {
       getDataFolder().mkdirs();
     }
@@ -34,6 +33,7 @@ public class Main extends JavaPlugin {
       Bukkit.getPluginManager().disablePlugin(this);
     }
 
+    getCommand("convertShows").setExecutor(new ConvertShows());
 
 
   }
