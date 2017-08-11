@@ -1,0 +1,6 @@
+name: CommandBlockConverter
+main: net.ryanhecht.commandconverter.Main
+version: 0.5
+description: Convert commands inside CommandBlocks from 1.8 to 1.9, 1.11, or 1.12
+author: RyanHecht_
+commands:
