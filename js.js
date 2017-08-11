@@ -1,7 +1,7 @@
 var parts;
 
 function completeConvert(old) {
-	if (old.startsWith("summon" || old.startsWith("/summon"))) {
+	if (old.startsWith("summon") || old.startsWith("/summon")) {
 		old = convertCommand(old);
 	}
 	return convert12(convertNested(old));
