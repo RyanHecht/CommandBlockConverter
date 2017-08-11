@@ -32,11 +32,18 @@ public class ScriptManager {
   public String convertCommand(String command) throws ScriptException {
     command = "completelyConvert(\"" + StringEscapeUtils.escapeJavaScript(command) + "\")";
 
-    Object returned = engine.eval(command, engine.getContext());
-    if (returned instanceof String) {
-      return (String) returned;
-    } else {
-      throw new IllegalArgumentException("Input did not return String");
+    try {
+      Object returned = engine.eval(command, engine.getContext());
+      if (returned instanceof String) {
+        return (String) returned;
+      } else {
+        throw new IllegalArgumentException("Input did not return String");
+      }
+    } catch (ScriptException ex) {
+      Main.getInstance().getLogger().severe("Error in converting command: " + command);
+      throw ex;
     }
+
+
   }
 }
