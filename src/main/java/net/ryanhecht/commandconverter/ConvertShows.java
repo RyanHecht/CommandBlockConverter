@@ -37,7 +37,9 @@ public class ConvertShows implements CommandExecutor {
       // Streams don't seem to like me very much :(
       for(Path path : paths.collect(Collectors.toList())) {
         File file = path.toFile();
-        if (FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("toaster")) {
+        if (!file.getAbsolutePath().contains("/_SYNCAPP/") && !(file.getAbsolutePath().contains("/_gsdata_/"))
+            && !file.getAbsolutePath().contains("\\_SYNCAPP\\") && !(file.getAbsolutePath().contains("\\_gsdata_\\"))
+            && FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("toaster")) {
           YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
           for (String key : config.getKeys(false)) {
             if(key.contains("cmd")) {
