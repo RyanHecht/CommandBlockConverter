@@ -601,6 +601,19 @@ function parseSection(depth, nbt, index){
 				input = input.replace(/\}\,[0-9]+\:\{/g, '},{');
 
 				// input = input.replace(/\[([0-9.]+)[fd]?,([0-9.]+)[fd]?,([0-9.]+)[fd]?\]/g, '[$1,$2,$3]');
+				input = input.replace(/\[([0-9.]+)f,([0-9.]+),([0-9.]+)\]/g, '[$1f,$2f,$3f]');
+				input = input.replace(/\[([0-9.]+),([0-9.]+)f,([0-9.]+)\]/g, '[$1f,$2f,$3f]');
+				input = input.replace(/\[([0-9.]+),([0-9.]+),([0-9.]+)f\]/g, '[$1f,$2f,$3f]');
+				input = input.replace(/\[([0-9.]+)f,([0-9.]+)f,([0-9.]+)\]/g, '[$1f,$2f,$3f]');
+				input = input.replace(/\[([0-9.]+),([0-9.]+)f,([0-9.]+)f\]/g, '[$1f,$2f,$3f]');
+				input = input.replace(/\[([0-9.]+)f,([0-9.]+),([0-9.]+)f\]/g, '[$1f,$2f,$3f]');
+
+				input = input.replace(/\[([0-9.]+)d,([0-9.]+),([0-9.]+)\]/g, '[$1d,$2d,$3d]');
+				input = input.replace(/\[([0-9.]+),([0-9.]+)d,([0-9.]+)\]/g, '[$1d,$2d,$3d]');
+				input = input.replace(/\[([0-9.]+),([0-9.]+),([0-9.]+)d\]/g, '[$1d,$2d,$3d]');
+				input = input.replace(/\[([0-9.]+)d,([0-9.]+)d,([0-9.]+)\]/g, '[$1d,$2d,$3d]');
+				input = input.replace(/\[([0-9.]+),([0-9.]+)d,([0-9.]+)d\]/g, '[$1d,$2d,$3d]');
+				input = input.replace(/\[([0-9.]+)d,([0-9.]+),([0-9.]+)d\]/g, '[$1d,$2d,$3d]');
 
 				return input;
 

@@ -1,6 +1,6 @@
 name: CommandBlockConverter
 main: net.ryanhecht.commandconverter.Main
-version: 1.0-Beta
+version: 1.1-Beta
 description: Convert commands inside CommandBlocks from 1.8 to 1.12
 depend: [BKCommonLib]
 author: RyanHecht_
